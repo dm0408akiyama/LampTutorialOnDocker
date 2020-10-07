@@ -16,11 +16,19 @@ class SampleController extends Controller
         return view('sample.index',$data);
     }
 }*/
-public function index(Request $request){
+public function index(){
     $data = [
-        'msg'=>'コントローラーから渡されたメッセージです。',
-        'id'=>$request->id
+        'msg'=>'名前を入力してください。',
+        /*'id'=>$request->id*/
 ]; 
+    return view('sample.index',$data);
+}
+public function post(Request $request){
+        $msg = $request->msg;
+
+        $data = [
+            'msg'=>'こんにちは、'.$msg.'さん！',
+    ];
     return view('sample.index',$data);
 }
 }

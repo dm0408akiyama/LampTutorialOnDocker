@@ -22,3 +22,4 @@ Route::get('sample','SampleController@index');
 /*Route::get('sample',function(){
     return view('sample.index');
 });*/
+Route::post('sample','SampleController@post');
