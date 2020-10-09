@@ -19,3 +19,7 @@ Route::get('/', function () {
 
 /*Route::get('sample/{id?}','SampleController@index');*/
 Route::get('sample','SampleController@index');
+/*Route::get('sample',function(){
+    return view('sample.index');
+});*/
+Route::post('sample','SampleController@post');
