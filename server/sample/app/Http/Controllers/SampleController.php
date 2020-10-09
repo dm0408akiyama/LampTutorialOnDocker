@@ -17,18 +17,21 @@ class SampleController extends Controller
     }
 }*/
 public function index(){
-    $data = [
+    /*$data = [
         'msg'=>'名前を入力してください。',
-        /*'id'=>$request->id*/
-]; 
-    return view('sample.index',$data);
+        'id'=>$request->id
+];*/
+    $data = [
+        ['name'=>'taro', 'mail'=>'taro@example.co.jp'],
+        ['name'=>'ziro', 'mail'=>'ziro@example.co.jp'],
+    ];
+    return view('sample.index',['data'=>$data]);
 }
 public function post(Request $request){
-        $msg = $request->msg;
 
-        $data = [
+        /*$data = [
             'msg'=>'こんにちは、'.$msg.'さん！',
-    ];
-    return view('sample.index',$data);
+    ];*/
+    return view('sample.index',['msg'=> $request->msg]);
 }
 }
