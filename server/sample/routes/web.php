@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\SampleMiddleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +19,8 @@ Route::get('/', function () {
 });
 
 /*Route::get('sample/{id?}','SampleController@index');*/
-Route::get('sample','SampleController@index');
+Route::get('sample','SampleController@index')
+    ->middleware(SampleMiddleware::class);
 /*Route::get('sample',function(){
     return view('sample.index');
 });*/

@@ -16,16 +16,16 @@ class SampleController extends Controller
         return view('sample.index',$data);
     }
 }*/
-public function index(){
+public function index(Request $request){
     /*$data = [
         'msg'=>'名前を入力してください。',
         'id'=>$request->id
 ];*/
-    $data = [
+    /*$data = [
         ['name'=>'taro', 'mail'=>'taro@example.co.jp'],
         ['name'=>'ziro', 'mail'=>'ziro@example.co.jp'],
-    ];
-    return view('sample.index',['data'=>$data]);
+    ];*/
+    return view('sample.index',['data'=>$request->data]);
 }
 public function post(Request $request){
 
